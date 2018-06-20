@@ -8,12 +8,10 @@
 
 import UIKit
 
-@IBDesignable
-class  SuperView: UIView {
+@IBDesignable class  SuperView: UIView {
   @IBInspectable var borderWidth: CGFloat = 6.0 {
     didSet {
       self.layer.borderWidth = self.borderWidth
-      self.layer.borderColor = UIColor.red.cgColor
     }
   }
   
@@ -28,4 +26,13 @@ class  SuperView: UIView {
       self.layer.cornerRadius = self.cornerRadius
     }
   }
+  
+  @IBInspectable var makeItRound: Bool = false {
+    didSet {
+      if makeItRound {
+        cornerRadius = frame.height * 0.5
+      }
+    }
+  }
+  
 }
